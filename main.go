@@ -51,7 +51,9 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	}
 	// initialize emp
 	emp := Employee{}
+	// initialize res
 	res := []Employee{}
+	// returns each row of query result to res
 	for selDB.Next() {
 		var id int
 		var name, city string
