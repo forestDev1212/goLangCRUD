@@ -71,6 +71,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 }
 
 // this is for http://localhost:8080/show?id={}
+// so as I can see the funcation's first parameter is for response and second is for request
 func Show(w http.ResponseWriter, r *http.Request) {
 	db := dbConn()
 	nId := r.URL.Query().Get("id")
