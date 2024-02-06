@@ -28,6 +28,19 @@ func dbConn() (db *sql.DB) {
 	return db
 }
 
+/**
+template: This is the Go standard library package for working with text and HTML templates.
+template.Must: This is a helper function that wraps a call to template.ParseGlob. It panics if the provided template or templates fail to parse.
+
+template.ParseGlob("form/*"): This function parses all the files matching the pattern "form/*" and returns a Template representing the parsed templates.
+
+form/*: This is a file pattern indicating that it should match all files in the "form" directory.
+var tmpl: This declares a package-level variable named tmpl of type *template.Template. The variable is then assigned the result of parsing the templates using template.Must.
+
+So, the variable tmpl will hold a reference to a Template that includes all the parsed templates found in the "form" directory. It's a common practice in Go web development to pre-parse templates during initialization to improve performance when rendering them later in the application.
+
+*/
+
 var tmpl = template.Must(template.ParseGlob("form/*"))
 
 func Index(w http.ResponseWriter, r *http.Request) {
