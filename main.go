@@ -70,6 +70,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	defer db.Close()
 }
 
+// this is for http://localhost:8080/show?id={}
 func Show(w http.ResponseWriter, r *http.Request) {
 	db := dbConn()
 	nId := r.URL.Query().Get("id")
